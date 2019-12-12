@@ -26,6 +26,7 @@ pictureBoxParking.Height);
                 listBoxLevels.Items.Add("Уровень" + (i + 1));
             }
             listBoxLevels.SelectedIndex = 0;
+
         }
 
         private void Draw()
