@@ -13,7 +13,7 @@ namespace Buharov_lab
     public partial class FormBulldozer : Form
     {
 
-        private Bulldozer bulldozer;
+        private ITransport tractor;
 
         public FormBulldozer()
         {
@@ -24,16 +24,23 @@ namespace Buharov_lab
         {
             Bitmap bmp = new Bitmap(pictureBox.Width, pictureBox.Height);
             Graphics gr = Graphics.FromImage(bmp);
-            bulldozer.DrawBulldozer(gr);
+            tractor.DrawVehicle(gr);
             pictureBox.Image = bmp;
         }
 
 
-        private void buttonCreate_Click(object sender, EventArgs e)
+        private void buttonCreateTractor_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            bulldozer = new Bulldozer(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Red, Color.Yellow, true, false, 6);
-            bulldozer.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBox.Width, pictureBox.Height);
+            tractor = new Tractor(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Orange);
+            tractor.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBox.Width, pictureBox.Height);
+            Draw();
+        }
+        private void buttonCreateBulldozer_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            tractor = new Bulldozer(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Brown, Color.Orange, false, false);
+            tractor.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBox.Width, pictureBox.Height);
             Draw();
         }
 
@@ -43,21 +50,20 @@ namespace Buharov_lab
             switch (name)
             {
                 case "buttonUp":
-                    bulldozer.MoveTransport(Direction.Up);
+                    tractor.MoveTransport(Direction.Up);
                     break;
                 case "buttonDown":
-                    bulldozer.MoveTransport(Direction.Down);
+                    tractor.MoveTransport(Direction.Down);
                     break;
                 case "buttonLeft":
-                    bulldozer.MoveTransport(Direction.Left);
+                    tractor.MoveTransport(Direction.Left);
                     break;
                 case "buttonRight":
-                    bulldozer.MoveTransport(Direction.Right);
+                    tractor.MoveTransport(Direction.Right);
                     break;
 
             }
             Draw();
         }
-
     }
 }
