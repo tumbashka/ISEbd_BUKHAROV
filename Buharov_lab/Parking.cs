@@ -27,7 +27,6 @@ namespace Buharov_lab
             _places = new Dictionary<int, T>();
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
-
         }
 
         public static int operator +(Parking<T> p, T car)

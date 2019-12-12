@@ -17,6 +17,7 @@ namespace Buharov_lab
         private const int countLevel = 5;
 
         FormCarConfig form;
+
         public FormParking()
         {
             InitializeComponent();
@@ -57,7 +58,6 @@ pictureBoxParking.Height);
                 }
             }
         }
-
 
         private void buttonParkingBulldozer_Click(object sender, EventArgs e)
         {
