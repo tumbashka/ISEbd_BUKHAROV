@@ -16,6 +16,7 @@ namespace Buharov_lab
 
         private const int countLevel = 5;
 
+        FormCarConfig form;
         public FormParking()
         {
             InitializeComponent();
@@ -26,7 +27,6 @@ pictureBoxParking.Height);
                 listBoxLevels.Items.Add("Уровень" + (i + 1));
             }
             listBoxLevels.SelectedIndex = 0;
-            //Draw();
         }
 
         private void Draw()
@@ -58,6 +58,7 @@ pictureBoxParking.Height);
             }
         }
 
+
         private void buttonParkingBulldozer_Click(object sender, EventArgs e)
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -77,7 +78,8 @@ pictureBoxParking.Height);
                         }
                         Draw();
                     }
-                }            }
+                }
+            }
         }
 
         private void buttonTakeVehicle_Click(object sender, EventArgs e)
@@ -112,9 +114,10 @@ pictureBoxParking.Height);
         {
             Draw();
         }
+
         private void buttonSetCar_Click(object sender, EventArgs e)
         {
-            FormCarConfig form = new FormCarConfig();
+            form = new FormCarConfig();
             form.AddEvent(AddCar);
             form.Show();
         }
@@ -131,6 +134,37 @@ pictureBoxParking.Height);
                 {
                     MessageBox.Show("Машину не удалось поставить");
                 }
+            }
+        }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if (parking.SaveData(saveFileDialog1.FileName))
+                {
+                    MessageBox.Show("Сохранение прошло успешно", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Не сохранилось", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if (parking.LoadData(openFileDialog1.FileName))
+                {
+                    MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Не загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                Draw();
             }
         }
     }
