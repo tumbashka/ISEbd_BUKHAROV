@@ -54,7 +54,8 @@ pictureBoxParking.Height);
                     int place = parking + tractor;
                     Draw();
                 }
-            }
+            }
+
         }
 
         private void buttonTakeVehicle_Click(object sender, EventArgs e)

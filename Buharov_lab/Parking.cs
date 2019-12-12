@@ -15,8 +15,10 @@ namespace Buharov_lab
 
         private int PictureHeight { get; set; }
 
-        private const int _placeSizeWidth = 210;
-        private const int _placeSizeHeight = 80;
+        private const int _placeSizeWidth = 210;
+
+        private const int _placeSizeHeight = 80;
+
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
             _places = new T[sizes];
@@ -26,7 +28,8 @@ namespace Buharov_lab
             {
                 _places[i] = null;
             }
-        }
+        }
+
         public static int operator +(Parking<T> p, T car)
         {
             for (int i = 0; i < p._places.Length; i++)
@@ -56,7 +59,8 @@ namespace Buharov_lab
                 return car;
             }
             return null;
-        }
+        }
+
         private bool CheckFreePlace(int index)
         {
             return _places[index] == null;
@@ -87,6 +91,7 @@ namespace Buharov_lab
                 }
                 g.DrawLine(pen, i * _placeSizeWidth, 0, i * _placeSizeWidth, 400);
             }
-        }
+        }
+
     }
 }
