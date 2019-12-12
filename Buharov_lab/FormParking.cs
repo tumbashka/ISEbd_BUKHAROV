@@ -76,7 +76,8 @@ pictureBoxParking.Height);
                         }
                         Draw();
                     }
-                }            }
+                }
+            }
         }
 
         private void buttonTakeVehicle_Click(object sender, EventArgs e)
