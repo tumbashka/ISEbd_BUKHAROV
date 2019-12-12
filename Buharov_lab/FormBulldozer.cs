@@ -32,7 +32,7 @@ namespace Buharov_lab
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            bulldozer = new Bulldozer(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Red, Color.Yellow, true, false, 6);
+            bulldozer = new Bulldozer(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Red, Color.Yellow, true, false, 4);
             bulldozer.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBox.Width, pictureBox.Height);
             Draw();
         }
@@ -56,6 +56,24 @@ namespace Buharov_lab
                     break;
 
             }
+            Draw();
+        }
+
+        private void button_add_wheels_Click(object sender, EventArgs e)
+        {
+            bulldozer.track.addWheels();
+            Draw();
+        }
+
+        private void button_remove_wheels_Click(object sender, EventArgs e)
+        {
+            bulldozer.track.removeWheels();
+            Draw();
+        }
+
+        private void button_Switch_Window_Click(object sender, EventArgs e)
+        {
+            bulldozer.switchWindow();
             Draw();
         }
 

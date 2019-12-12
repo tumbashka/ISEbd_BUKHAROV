@@ -9,6 +9,7 @@ namespace Buharov_lab
 {
     class Bulldozer
     {
+
         private float _startPosX;
 
         private float _startPosY;
@@ -17,9 +18,9 @@ namespace Buharov_lab
 
         private int _pictureHeight;
 
-        private const int BulldozerWidth = 100;
+        private const int BulldozerWidth = 120;
 
-        private const int BulldozerHeight = 100;
+        private const int BulldozerHeight = 70;
 
         public int MaxSpeed { private set; get; }
 
@@ -34,6 +35,8 @@ namespace Buharov_lab
         public Color MainColor { private set; get; }
 
         public Color DopColor { private set; get; }
+
+        public Track track;
         public Bulldozer(int maxSpeed, float weight, Color mainColor, Color dopColor, bool bucketRaised, bool windowOpen, int countWheels)
         {
             MaxSpeed = maxSpeed;
@@ -43,6 +46,7 @@ namespace Buharov_lab
             BucketRaised = bucketRaised;
             WindowOpen = windowOpen;
             CountWheels = countWheels;
+            track = new Track(CountWheels);
 
         }
 
@@ -85,6 +89,15 @@ namespace Buharov_lab
                     break;
             }
         }
+        public void switchWindow()
+        {
+            if (WindowOpen)
+            {
+                WindowOpen = false;
+            }
+            else
+                WindowOpen = true;
+        }
 
         public void DrawBulldozer(Graphics g)
         {
@@ -92,7 +105,6 @@ namespace Buharov_lab
             Pen orangePen = new Pen(Color.Orange);
             Brush blueBrush = new SolidBrush(Color.Blue);
             Brush blackBrush = new SolidBrush(Color.Black);
-            Brush redBrush = new SolidBrush(Color.Red);
             Brush orangeBrush = new SolidBrush(Color.Orange);
 
             if (!WindowOpen)
@@ -102,13 +114,7 @@ namespace Buharov_lab
             g.DrawRectangle(blackPen, _startPosX + 19, _startPosY + 9, 21, 21);// обводка окна
             g.FillRectangle(orangeBrush, _startPosX + 10, _startPosY + 30, 60, 20);// оранжевый корпус
 
-            g.FillEllipse(redBrush, _startPosX, _startPosY + 45, 20, 20);
-            g.FillEllipse(redBrush, _startPosX + 60, _startPosY + 45, 20, 20);
-            g.FillRectangle(redBrush, _startPosX + 10, _startPosY + 45, 60, 20);
-            g.DrawEllipse(blackPen, _startPosX, _startPosY + 45, 20, 20);
-            g.DrawEllipse(blackPen, _startPosX + 20, _startPosY + 45, 20, 20);
-            g.DrawEllipse(blackPen, _startPosX + 40, _startPosY + 45, 20, 20);
-            g.DrawEllipse(blackPen, _startPosX + 60, _startPosY + 45, 20, 20);
+            track.DrawWheel(g, _startPosX, _startPosY);
 
             g.FillRectangle(blackBrush, _startPosX + 60, _startPosY + 30, 30, 10);// отрисовка ковша
             for (int i = 0; i < 5; i++)
