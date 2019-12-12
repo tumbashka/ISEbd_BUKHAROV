@@ -59,5 +59,9 @@ namespace Buharov_lab
                 g.DrawLine(DopColorPen, _startPosX + 82 - i, _startPosY + 10 + i * 3, _startPosX + 102 + i, _startPosY - 2 + i * 2);
             }
         }
+        public void SetDopColor(Color color)
+        {
+            DopColor = color;
+        }
     }
 }

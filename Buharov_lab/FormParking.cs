@@ -112,5 +112,26 @@ pictureBoxParking.Height);
         {
             Draw();
         }
+        private void buttonSetCar_Click(object sender, EventArgs e)
+        {
+            FormCarConfig form = new FormCarConfig();
+            form.AddEvent(AddCar);
+            form.Show();
+        }
+        private void AddCar(ITransport car)
+        {
+            if (car != null && listBoxLevels.SelectedIndex > -1)
+            {
+                int place = parking[listBoxLevels.SelectedIndex] + car;
+                if (place > -1)
+                {
+                    Draw();
+                }
+                else
+                {
+                    MessageBox.Show("Машину не удалось поставить");
+                }
+            }
+        }
     }
 }

@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.pictureBoxParking = new System.Windows.Forms.PictureBox();
-            this.buttonParkingTractor = new System.Windows.Forms.Button();
-            this.buttonParkingBulldozer = new System.Windows.Forms.Button();
             this.groupBox = new System.Windows.Forms.GroupBox();
             this.pictureBoxTakeVehicle = new System.Windows.Forms.PictureBox();
             this.buttonTakeVehicle = new System.Windows.Forms.Button();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label = new System.Windows.Forms.Label();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
+            this.buttonSetCar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeVehicle)).BeginInit();
@@ -50,26 +49,6 @@
             this.pictureBoxParking.Size = new System.Drawing.Size(753, 481);
             this.pictureBoxParking.TabIndex = 0;
             this.pictureBoxParking.TabStop = false;
-            // 
-            // buttonParkingTractor
-            // 
-            this.buttonParkingTractor.Location = new System.Drawing.Point(788, 128);
-            this.buttonParkingTractor.Name = "buttonParkingTractor";
-            this.buttonParkingTractor.Size = new System.Drawing.Size(91, 46);
-            this.buttonParkingTractor.TabIndex = 1;
-            this.buttonParkingTractor.Text = "Припарковать трактор";
-            this.buttonParkingTractor.UseVisualStyleBackColor = true;
-            this.buttonParkingTractor.Click += new System.EventHandler(this.buttonParkingTractor_Click);
-            // 
-            // buttonParkingBulldozer
-            // 
-            this.buttonParkingBulldozer.Location = new System.Drawing.Point(788, 180);
-            this.buttonParkingBulldozer.Name = "buttonParkingBulldozer";
-            this.buttonParkingBulldozer.Size = new System.Drawing.Size(91, 46);
-            this.buttonParkingBulldozer.TabIndex = 2;
-            this.buttonParkingBulldozer.Text = "Припарковать бульдозер";
-            this.buttonParkingBulldozer.UseVisualStyleBackColor = true;
-            this.buttonParkingBulldozer.Click += new System.EventHandler(this.buttonParkingBulldozer_Click);
             // 
             // groupBox
             // 
@@ -127,15 +106,24 @@
             this.listBoxLevels.TabIndex = 4;
             this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.listBoxLevels_SelectedIndexChanged);
             // 
+            // buttonSetCar
+            // 
+            this.buttonSetCar.Location = new System.Drawing.Point(781, 148);
+            this.buttonSetCar.Name = "buttonSetCar";
+            this.buttonSetCar.Size = new System.Drawing.Size(93, 51);
+            this.buttonSetCar.TabIndex = 5;
+            this.buttonSetCar.Text = "Заказать тяжелую технику";
+            this.buttonSetCar.UseVisualStyleBackColor = true;
+            this.buttonSetCar.Click += new System.EventHandler(this.buttonSetCar_Click);
+            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 481);
+            this.Controls.Add(this.buttonSetCar);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.groupBox);
-            this.Controls.Add(this.buttonParkingBulldozer);
-            this.Controls.Add(this.buttonParkingTractor);
             this.Controls.Add(this.pictureBoxParking);
             this.Name = "FormParking";
             this.Text = "FormParking";
@@ -150,14 +138,13 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxParking;
-        private System.Windows.Forms.Button buttonParkingTractor;
-        private System.Windows.Forms.Button buttonParkingBulldozer;
         private System.Windows.Forms.GroupBox groupBox;
         private System.Windows.Forms.Button buttonTakeVehicle;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.PictureBox pictureBoxTakeVehicle;
         private System.Windows.Forms.ListBox listBoxLevels;
+        private System.Windows.Forms.Button buttonSetCar;
     }
 }
 
