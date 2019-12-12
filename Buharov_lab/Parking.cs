@@ -7,16 +7,18 @@ using System.Threading.Tasks;
 
 namespace Buharov_lab
 {
-    class Parking<T> where T : class, ITransport
+    class Parking<T, N> where T : class, ITransport where N : class, IOrnament
     {
         private T[] _places;
-
+        private N[] _placesWheels;
         private int PictureWidth { get; set; }
 
         private int PictureHeight { get; set; }
 
-        private const int _placeSizeWidth = 210;
-        private const int _placeSizeHeight = 80;
+        private const int _placeSizeWidth = 210;
+
+        private const int _placeSizeHeight = 80;
+
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
             _places = new T[sizes];
@@ -26,8 +28,9 @@ namespace Buharov_lab
             {
                 _places[i] = null;
             }
-        }
-        public static int operator +(Parking<T> p, T car)
+        }
+
+        public static int operator +(Parking<T, N> p, T car)
         {
             for (int i = 0; i < p._places.Length; i++)
             {
@@ -43,7 +46,7 @@ namespace Buharov_lab
             return -1;
         }
 
-        public static T operator -(Parking<T> p, int index)
+        public static T operator -(Parking<T, N> p, int index)
         {
             if (index < 0 || index > p._places.Length)
             {
@@ -56,7 +59,30 @@ namespace Buharov_lab
                 return car;
             }
             return null;
-        }
+        }
+
+        public static bool operator >(Parking<T, N> p, int x)
+        {
+            int n = 0;
+            for (int i = 0; i < p._places.Length; i++)
+            {
+                if (p._places[i] != null)
+                    n++;
+            }
+            return n > x;
+        }
+
+        public static bool operator <(Parking<T, N> p, int x)
+        {
+            int n = 0;
+            for (int i = 0; i < p._places.Length; i++)
+            {
+                if (p._places[i] != null)
+                    n++;
+            }
+            return n < x;
+        }
+
         private bool CheckFreePlace(int index)
         {
             return _places[index] == null;
@@ -87,6 +113,7 @@ namespace Buharov_lab
                 }
                 g.DrawLine(pen, i * _placeSizeWidth, 0, i * _placeSizeWidth, 400);
             }
-        }
+        }
+
     }
 }
