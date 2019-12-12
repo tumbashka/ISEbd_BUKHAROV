@@ -32,14 +32,14 @@ namespace Buharov_lab
         private void buttonCreateTractor_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            tractor = new Tractor(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Orange);
+            tractor = new Tractor(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Orange, OrnamentEnum.Two, Color.Aquamarine);
             tractor.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBox.Width, pictureBox.Height);
             Draw();
         }
         private void buttonCreateBulldozer_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            tractor = new Bulldozer(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Brown, Color.Orange, false, false);
+            tractor = new Bulldozer(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Brown, Color.Orange, false, false, OrnamentEnum.Two, Color.Aquamarine);
             tractor.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBox.Width, pictureBox.Height);
             Draw();
         }

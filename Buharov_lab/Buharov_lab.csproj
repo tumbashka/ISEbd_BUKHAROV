@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bulldozer.cs" />
+    <Compile Include="DefaultWheels.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="FormBulldozer.cs">
       <SubType>Form</SubType>
@@ -54,9 +55,13 @@
     <Compile Include="FormBulldozer.Designer.cs">
       <DependentUpon>FormBulldozer.cs</DependentUpon>
     </Compile>
+    <Compile Include="IOrnament.cs" />
     <Compile Include="ITransport.cs" />
+    <Compile Include="MarkWheels.cs" />
+    <Compile Include="OrnamentEnum.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RectWheels.cs" />
     <Compile Include="Tractor.cs" />
     <Compile Include="Vehicle.cs" />
     <EmbeddedResource Include="FormBulldozer.resx">

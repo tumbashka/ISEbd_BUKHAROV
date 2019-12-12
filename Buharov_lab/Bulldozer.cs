@@ -21,8 +21,8 @@ namespace Buharov_lab
 
         public Color DopColor { private set; get; }
 
-        public Bulldozer(int maxSpeed, float weight, Color mainColor, Color dopColor, bool bucketRaised, bool windowOpen) :
-            base(maxSpeed, weight, mainColor)
+        public Bulldozer(int maxSpeed, float weight, Color mainColor, Color dopColor, bool bucketRaised, bool windowOpen, OrnamentEnum wheelNumb, Color ornamentColor) :
+            base(maxSpeed, weight, mainColor, wheelNumb, ornamentColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;

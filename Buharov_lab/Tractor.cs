@@ -13,11 +13,19 @@ namespace Buharov_lab
 
         protected const int carHeight = 70;
 
-        public Tractor(int maxSpeed, float weight, Color mainColor)
+        public OrnamentEnum WheelNumb { private set; get; }
+
+        public Color OrnamentColor { protected set; get; }
+
+        IOrnament ornament;
+
+        public Tractor(int maxSpeed, float weight, Color mainColor, OrnamentEnum wheelNumb, Color ornamentColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
+            WheelNumb = wheelNumb;
+            OrnamentColor = ornamentColor;
         }
         public override void MoveTransport(Direction direction)
         {
@@ -63,13 +71,23 @@ namespace Buharov_lab
             g.DrawRectangle(blackPen, _startPosX + 19, _startPosY + 9, 21, 21);// обводка окна
             g.FillRectangle(MainBrush, _startPosX + 10, _startPosY + 30, 60, 20);// оранжевый корпус
 
-            g.FillEllipse(redBrush, _startPosX, _startPosY + 45, 20, 20);
-            g.FillEllipse(redBrush, _startPosX + 60, _startPosY + 45, 20, 20);
-            g.FillRectangle(redBrush, _startPosX + 10, _startPosY + 45, 60, 20);
-            g.DrawEllipse(blackPen, _startPosX, _startPosY + 45, 20, 20);
-            g.DrawEllipse(blackPen, _startPosX + 20, _startPosY + 45, 20, 20);
-            g.DrawEllipse(blackPen, _startPosX + 40, _startPosY + 45, 20, 20);
-            g.DrawEllipse(blackPen, _startPosX + 60, _startPosY + 45, 20, 20);
+            switch (new Random().Next(0, 3))
+            {
+                case 0:
+                    ornament = new DefaultWheels(_startPosX, _startPosY);
+                    break;
+                case 1:
+                    ornament = new RectWheels(_startPosX, _startPosY);
+                    break;
+                case 2:
+                    ornament = new MarkWheels(_startPosX, _startPosY);
+                    break;
+                default:
+                    ornament = new DefaultWheels(_startPosX, _startPosY);
+                    break;
+            }
+
+            ornament.OrnamentDraw(g, WheelNumb, OrnamentColor);
 
         }
     }
