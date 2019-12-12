@@ -17,6 +17,7 @@ namespace Buharov_lab
         private const int countLevel = 5;
 
         FormCarConfig form;
+        
         public FormParking()
         {
             InitializeComponent();
