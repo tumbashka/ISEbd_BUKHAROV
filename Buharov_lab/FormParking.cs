@@ -40,7 +40,7 @@ pictureBoxParking.Height);
                 pictureBoxParking.Image = bmp;
             }
         }
-        
+
         private void buttonTakeVehicle_Click(object sender, EventArgs e)
         {
             if (listBoxLevels.SelectedIndex > -1)
