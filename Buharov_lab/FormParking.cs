@@ -53,7 +53,7 @@ pictureBoxParking.Height);
                 {
                     try
                     {
-                        var tractor = parking[listBoxLevels.SelectedIndex] - (Convert.ToInt32(maskedTextBox.Text) - 1);
+                        var tractor = parking[listBoxLevels.SelectedIndex] - (Convert.ToInt32(maskedTextBox.Text));
                         Bitmap bmp = new Bitmap(pictureBoxTakeVehicle.Width, pictureBoxTakeVehicle.Height);
                         Graphics gr = Graphics.FromImage(bmp);
                         tractor.SetPosition(5, 5, pictureBoxTakeVehicle.Width, pictureBoxTakeVehicle.Height);
