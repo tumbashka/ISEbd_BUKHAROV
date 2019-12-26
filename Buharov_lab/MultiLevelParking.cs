@@ -19,6 +19,8 @@ namespace Buharov_lab
 
         public MultiLevelParking(int countStages, int pictureWidth, int pictureHeight)
         {
+            this.pictureWidth = pictureWidth;
+            this.pictureHeight = pictureHeight;
             parkingStages = new List<Parking<ITransport>>();
             for (int i = 0; i < countStages; ++i)
             {
@@ -121,7 +123,6 @@ namespace Buharov_lab
                     return true;
                 }
                 return false;
-
             }
         }
     }
