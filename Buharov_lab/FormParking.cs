@@ -114,7 +114,6 @@ pictureBoxParking.Height);
         {
             Draw();
         }
-
         private void buttonSetVehicle_Click(object sender, EventArgs e)
         {
             form = new FormVehicleConfig();
@@ -139,9 +138,9 @@ pictureBoxParking.Height);
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                if (parking.SaveData(saveFileDialog1.FileName))
+                if (parking.SaveData(saveFileDialog.FileName))
                 {
                     MessageBox.Show("Сохранение прошло успешно", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -154,9 +153,9 @@ pictureBoxParking.Height);
 
         private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                if (parking.LoadData(openFileDialog1.FileName))
+                if (parking.LoadData(openFileDialog.FileName))
                 {
                     MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
