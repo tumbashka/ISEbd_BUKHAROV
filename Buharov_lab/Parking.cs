@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace Buharov_lab
 {
+
     class Parking<T, N> where T : class, ITransport where N : class, IOrnament
     {
         private T[] _places;
         private N[] _placesWheels;
+
         private int PictureWidth { get; set; }
 
         private int PictureHeight { get; set; }
@@ -60,6 +62,7 @@ namespace Buharov_lab
             }
             return null;
         }
+
 
         public static bool operator >(Parking<T, N> p, int x)
         {
