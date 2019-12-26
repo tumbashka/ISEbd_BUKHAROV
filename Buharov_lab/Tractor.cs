@@ -150,7 +150,8 @@ namespace Buharov_lab
             {
                 return Equals(tractorObj);
             }
-        }
+        }
+
         public override int GetHashCode()
         {
             return base.GetHashCode();
