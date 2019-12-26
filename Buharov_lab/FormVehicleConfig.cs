@@ -15,7 +15,7 @@ namespace Buharov_lab
 
         ITransport vehicle = null;
 
-        private event carDelegate eventAddCar;
+        private event carDelegate eventAddVehicle;
 
         public FormVehicleConfig()
         {
@@ -46,13 +46,13 @@ namespace Buharov_lab
 
         public void AddEvent(carDelegate ev)
         {
-            if (eventAddCar == null)
+            if (eventAddVehicle == null)
             {
-                eventAddCar = new carDelegate(ev);
+                eventAddVehicle = new carDelegate(ev);
             }
             else
             {
-                eventAddCar += ev;
+                eventAddVehicle += ev;
             }
         }
 
@@ -147,7 +147,7 @@ namespace Buharov_lab
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
-            eventAddCar?.Invoke(vehicle);
+            eventAddVehicle?.Invoke(vehicle);
             Close();
         }
     }
