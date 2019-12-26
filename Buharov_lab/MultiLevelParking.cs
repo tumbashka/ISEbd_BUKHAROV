@@ -20,6 +20,8 @@ namespace Buharov_lab
         public MultiLevelParking(int countStages, int pictureWidth, int pictureHeight)
         {
             parkingStages = new List<Parking<ITransport>>();
+            this.pictureWidth = pictureWidth;
+            this.pictureHeight = pictureHeight;
             for (int i = 0; i < countStages; ++i)
             {
                 parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth, pictureHeight));
@@ -52,9 +54,10 @@ namespace Buharov_lab
                     sw.Write("Level" + Environment.NewLine);
                     for (int i = 0; i < countPlaces; i++)
                     {
-                        var vehicle = level[i];
-                        if (vehicle != null)
+                        try
                         {
+                            var vehicle = level[i];
+
                             if (vehicle.GetType().Name == "Tractor")
                             {
                                 sw.Write(i + ":Tractor:");
@@ -65,6 +68,7 @@ namespace Buharov_lab
                             }
                             sw.Write(vehicle + Environment.NewLine);
                         }
+                        catch { }
                     }
                 }
             }
@@ -120,8 +124,10 @@ namespace Buharov_lab
                     }
                     return true;
                 }
-                return false;
-
+                else
+                {
+                    throw new Exception("Неверный формат файла");
+                }
             }
         }
     }
