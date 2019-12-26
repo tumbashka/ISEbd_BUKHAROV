@@ -36,6 +36,9 @@
             this.buttonTakeVehicle = new System.Windows.Forms.Button();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label = new System.Windows.Forms.Label();
+            this.buttonCompare = new System.Windows.Forms.Button();
+            this.maskedTextBoxCompare = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeVehicle)).BeginInit();
@@ -117,11 +120,39 @@
             this.label.TabIndex = 0;
             this.label.Text = "Место:";
             // 
+            // buttonCompare
+            // 
+            this.buttonCompare.Location = new System.Drawing.Point(767, 134);
+            this.buttonCompare.Name = "buttonCompare";
+            this.buttonCompare.Size = new System.Drawing.Size(91, 61);
+            this.buttonCompare.TabIndex = 4;
+            this.buttonCompare.Text = "Сравнить количество транспорта с числом";
+            this.buttonCompare.UseVisualStyleBackColor = true;
+            this.buttonCompare.Click += new System.EventHandler(this.buttonCompare_Click);
+            // 
+            // maskedTextBoxCompare
+            // 
+            this.maskedTextBoxCompare.Location = new System.Drawing.Point(866, 175);
+            this.maskedTextBoxCompare.Name = "maskedTextBoxCompare";
+            this.maskedTextBoxCompare.Size = new System.Drawing.Size(50, 20);
+            this.maskedTextBoxCompare.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(764, 198);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 4;
+            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 481);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.maskedTextBoxCompare);
+            this.Controls.Add(this.buttonCompare);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.buttonParkingBulldozer);
             this.Controls.Add(this.buttonParkingTractor);
@@ -133,6 +164,7 @@
             this.groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeVehicle)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -146,6 +178,9 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.PictureBox pictureBoxTakeVehicle;
+        private System.Windows.Forms.Button buttonCompare;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxCompare;
+        private System.Windows.Forms.Label label1;
     }
 }
 

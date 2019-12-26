@@ -54,7 +54,9 @@
     <Compile Include="FormParking.Designer.cs">
       <DependentUpon>FormParking.cs</DependentUpon>
     </Compile>
+    <Compile Include="IOrnament.cs" />
     <Compile Include="ITransport.cs" />
+    <Compile Include="OrnamentEnum.cs" />
     <Compile Include="Parking.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -12,12 +12,12 @@ namespace Buharov_lab
 {
     public partial class FormParking : Form
     {
-        Parking<ITransport> parking;
+        Parking<ITransport, IOrnament> parking;
 
         public FormParking()
         {
             InitializeComponent();
-            parking = new Parking<ITransport>(20, pictureBoxParking.Width,
+            parking = new Parking<ITransport, IOrnament>(20, pictureBoxParking.Width,
 pictureBoxParking.Height);
             Draw();
         }
@@ -82,5 +82,25 @@ pictureBoxParking.Height);
                 Draw();
             }
         }
+
+        private void buttonCompare_Click(object sender, EventArgs e)
+        {
+            if (maskedTextBoxCompare.Text != "")
+            {
+                if (parking > Convert.ToInt32(maskedTextBoxCompare.Text))
+                {
+                    label1.Text = "Кол-во транспорта > чем " + maskedTextBoxCompare.Text;
+                }
+                else if (parking < Convert.ToInt32(maskedTextBoxCompare.Text))
+                {
+                    label1.Text = "Кол-во транспорта < чем " + maskedTextBoxCompare.Text;
+                }
+                else
+                {
+                    label1.Text = "Кол-во транспорта = " + maskedTextBoxCompare.Text;
+                }
+            }
+        }
+
     }
 }
