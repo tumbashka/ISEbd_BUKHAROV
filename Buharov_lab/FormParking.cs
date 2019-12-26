@@ -85,19 +85,19 @@ pictureBoxParking.Height);
 
         private void buttonCompare_Click(object sender, EventArgs e)
         {
-            if (maskedTextBox1.Text != "")
+            if (maskedTextBoxCompare.Text != "")
             {
-                if (parking > Convert.ToInt32(maskedTextBox1.Text))
+                if (parking > Convert.ToInt32(maskedTextBoxCompare.Text))
                 {
-                    label1.Text = "Кол-во транспорта > чем " + maskedTextBox1.Text;
+                    label1.Text = "Кол-во транспорта > чем " + maskedTextBoxCompare.Text;
                 }
-                else if (parking < Convert.ToInt32(maskedTextBox1.Text))
+                else if (parking < Convert.ToInt32(maskedTextBoxCompare.Text))
                 {
-                    label1.Text = "Кол-во транспорта < чем " + maskedTextBox1.Text;
+                    label1.Text = "Кол-во транспорта < чем " + maskedTextBoxCompare.Text;
                 }
                 else
                 {
-                    label1.Text = "Кол-во транспорта = " + maskedTextBox1.Text;
+                    label1.Text = "Кол-во транспорта = " + maskedTextBoxCompare.Text;
                 }
             }
         }
