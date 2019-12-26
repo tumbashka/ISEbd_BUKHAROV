@@ -32,17 +32,15 @@ namespace Buharov_lab
             buttonCancel.Click += (object sender, EventArgs e) => { Close(); };
         }
 
-
-
         private void DrawVehicle()
         {
             if (vehicle != null)
             {
-                Bitmap bmp = new Bitmap(pictureBoxTakeCar.Width, pictureBoxTakeCar.Height);
+                Bitmap bmp = new Bitmap(pictureBoxTakeVehicle.Width, pictureBoxTakeVehicle.Height);
                 Graphics gr = Graphics.FromImage(bmp);
-                vehicle.SetPosition(5, 5, pictureBoxTakeCar.Width, pictureBoxTakeCar.Height);
+                vehicle.SetPosition(5, 5, pictureBoxTakeVehicle.Width, pictureBoxTakeVehicle.Height);
                 vehicle.DrawVehicle(gr);
-                pictureBoxTakeCar.Image = bmp;
+                pictureBoxTakeVehicle.Image = bmp;
             }
         }
 
@@ -57,6 +55,7 @@ namespace Buharov_lab
                 eventAddCar += ev;
             }
         }
+
         private void LabelTractor_MouseDown(object sender, MouseEventArgs e)
         {
             labelTractor.DoDragDrop(labelTractor.Text, DragDropEffects.Move |
@@ -122,7 +121,6 @@ namespace Buharov_lab
             }
         }
 
-
         private void labelDopColor_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(typeof(Color)))
@@ -134,6 +132,7 @@ namespace Buharov_lab
                 e.Effect = DragDropEffects.None;
             }
         }
+
         private void labelDopColor_DragDrop(object sender, DragEventArgs e)
         {
             if (vehicle != null)
@@ -146,12 +145,10 @@ namespace Buharov_lab
             }
         }
 
-
         private void buttonOk_Click(object sender, EventArgs e)
         {
             eventAddCar?.Invoke(vehicle);
             Close();
         }
-
     }
 }
