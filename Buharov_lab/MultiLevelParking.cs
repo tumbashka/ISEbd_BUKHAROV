@@ -19,9 +19,9 @@ namespace Buharov_lab
 
         public MultiLevelParking(int countStages, int pictureWidth, int pictureHeight)
         {
+            parkingStages = new List<Parking<ITransport>>();
             this.pictureWidth = pictureWidth;
             this.pictureHeight = pictureHeight;
-            parkingStages = new List<Parking<ITransport>>();
             for (int i = 0; i < countStages; ++i)
             {
                 parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth, pictureHeight));
