@@ -1,6 +1,6 @@
 ﻿namespace Buharov_lab
 {
-    partial class FormCarConfig
+    partial class FormVehicleConfig
     {
         /// <summary>
         /// Required designer variable.
@@ -70,7 +70,7 @@
             this.groupBoxType.Size = new System.Drawing.Size(147, 123);
             this.groupBoxType.TabIndex = 1;
             this.groupBoxType.TabStop = false;
-            this.groupBoxType.Text = "Тип кузова";
+            this.groupBoxType.Text = "Тип техники";
             // 
             // labelBulldozer
             // 
@@ -254,7 +254,7 @@
             this.Controls.Add(this.panelVehicle);
             this.Controls.Add(this.groupBoxType);
             this.Name = "FormCarConfig";
-            this.Text = "FormCarConfig";
+            this.Text = "FormVehicleConfig";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeVehicle)).EndInit();
             this.groupBoxType.ResumeLayout(false);
             this.panelVehicle.ResumeLayout(false);

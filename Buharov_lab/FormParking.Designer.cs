@@ -35,7 +35,7 @@
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label = new System.Windows.Forms.Label();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
-            this.buttonSetCar = new System.Windows.Forms.Button();
+            this.buttonSetVehicle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeVehicle)).BeginInit();
@@ -106,22 +106,22 @@
             this.listBoxLevels.TabIndex = 4;
             this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.listBoxLevels_SelectedIndexChanged);
             // 
-            // buttonSetCar
+            // buttonSetVehicle
             // 
-            this.buttonSetCar.Location = new System.Drawing.Point(781, 148);
-            this.buttonSetCar.Name = "buttonSetCar";
-            this.buttonSetCar.Size = new System.Drawing.Size(93, 51);
-            this.buttonSetCar.TabIndex = 5;
-            this.buttonSetCar.Text = "Заказать тяжелую технику";
-            this.buttonSetCar.UseVisualStyleBackColor = true;
-            this.buttonSetCar.Click += new System.EventHandler(this.buttonSetCar_Click);
+            this.buttonSetVehicle.Location = new System.Drawing.Point(781, 148);
+            this.buttonSetVehicle.Name = "buttonSetVehicle";
+            this.buttonSetVehicle.Size = new System.Drawing.Size(93, 51);
+            this.buttonSetVehicle.TabIndex = 5;
+            this.buttonSetVehicle.Text = "Заказать тяжелую технику";
+            this.buttonSetVehicle.UseVisualStyleBackColor = true;
+            this.buttonSetVehicle.Click += new System.EventHandler(this.buttonSetVehicle_Click);
             // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 481);
-            this.Controls.Add(this.buttonSetCar);
+            this.Controls.Add(this.buttonSetVehicle);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.pictureBoxParking);
@@ -144,7 +144,7 @@
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.PictureBox pictureBoxTakeVehicle;
         private System.Windows.Forms.ListBox listBoxLevels;
-        private System.Windows.Forms.Button buttonSetCar;
+        private System.Windows.Forms.Button buttonSetVehicle;
     }
 }
 
