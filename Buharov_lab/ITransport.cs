@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Buharov_lab
 {
-    interface ITransport
+    public interface ITransport
     {
 
         void SetPosition(int x, int y, int width, int height);
@@ -16,5 +16,6 @@ namespace Buharov_lab
 
         void DrawVehicle(Graphics g);
 
+        void SetMainColor(Color color);
     }
 }

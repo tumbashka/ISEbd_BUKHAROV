@@ -16,6 +16,8 @@ namespace Buharov_lab
 
         private const int countLevel = 5;
 
+        FormVehicleConfig form;
+        
         public FormParking()
         {
             InitializeComponent();
@@ -26,7 +28,6 @@ pictureBoxParking.Height);
                 listBoxLevels.Items.Add("Уровень" + (i + 1));
             }
             listBoxLevels.SelectedIndex = 0;
-
         }
 
         private void Draw()
@@ -112,6 +113,27 @@ pictureBoxParking.Height);
         private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
             Draw();
+        }
+        private void buttonSetVehicle_Click(object sender, EventArgs e)
+        {
+            form = new FormVehicleConfig();
+            form.AddEvent(AddVehicle);
+            form.Show();
+        }
+        private void AddVehicle(ITransport vehicle)
+        {
+            if (vehicle != null && listBoxLevels.SelectedIndex > -1)
+            {
+                int place = parking[listBoxLevels.SelectedIndex] + vehicle;
+                if (place > -1)
+                {
+                    Draw();
+                }
+                else
+                {
+                    MessageBox.Show("Технику не удалось поставить");
+                }
+            }
         }
     }
 }
