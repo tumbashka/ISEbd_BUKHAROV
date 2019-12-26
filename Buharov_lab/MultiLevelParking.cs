@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Buharov_lab
 {
-    class MultiLevelParking
+    public class MultiLevelParking
     {
         List<Parking<ITransport>> parkingStages;
 
@@ -40,7 +40,7 @@ namespace Buharov_lab
             }
         }
 
-        public bool SaveData(string filename)
+        public void SaveData(string filename)
         {
             if (File.Exists(filename))
             {
@@ -52,27 +52,20 @@ namespace Buharov_lab
                 foreach (var level in parkingStages)
                 {
                     sw.Write("Level" + Environment.NewLine);
-                    for (int i = 0; i < countPlaces; i++)
+                    foreach (ITransport vehicle in level)
                     {
-                        try
+                        if (vehicle.GetType().Name == "Tractor")
                         {
-                            var vehicle = level[i];
-
-                            if (vehicle.GetType().Name == "Tractor")
-                            {
-                                sw.Write(i + ":Tractor:");
-                            }
-                            if (vehicle.GetType().Name == "Bulldozer")
-                            {
-                                sw.Write(i + ":Bulldozer:");
-                            }
-                            sw.Write(vehicle + Environment.NewLine);
+                            sw.Write((level.GetKey) + ":Tractor:");
                         }
-                        catch { }
+                        if (vehicle.GetType().Name == "Bulldozer")
+                        {
+                            sw.Write((level.GetKey) + ":Bulldozer:");
+                        }
+                        sw.Write(vehicle + Environment.NewLine);
                     }
                 }
             }
-            return true;
         }
 
         private void WriteToFile(string text, StreamWriter stream)
@@ -81,11 +74,11 @@ namespace Buharov_lab
             stream.Write(text);
         }
 
-        public bool LoadData(string filename)
+        public void LoadData(string filename)
         {
             if (!File.Exists(filename))
             {
-                return false;
+                throw new FileNotFoundException();
             }
             int counter = -1;
             ITransport vehicle = null;
@@ -122,7 +115,6 @@ namespace Buharov_lab
                             parkingStages[counter][Convert.ToInt32(line.Split(':')[0])] = vehicle;
                         }
                     }
-                    return true;
                 }
                 else
                 {
@@ -130,5 +122,11 @@ namespace Buharov_lab
                 }
             }
         }
+
+        public void Sort()
+        {
+            parkingStages.Sort();
+        }
+
     }
 }

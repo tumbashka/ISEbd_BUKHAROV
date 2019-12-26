@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Buharov_lab
 {
-    public class Tractor : Vehicle
+    public class Tractor : Vehicle, IComparable<Tractor>, IEquatable<Tractor>
     {
         protected const int carWidth = 120;
 
@@ -88,6 +88,72 @@ namespace Buharov_lab
             g.DrawEllipse(blackPen, _startPosX + 40, _startPosY + 45, 20, 20);
             g.DrawEllipse(blackPen, _startPosX + 60, _startPosY + 45, 20, 20);
 
+        }
+
+        public int CompareTo(Tractor other)
+        {
+            if (other == null)
+            {
+                return 1;
+            }
+            if (MaxSpeed != other.MaxSpeed)
+            {
+                return MaxSpeed.CompareTo(other.MaxSpeed);
+            }
+            if (Weight != other.Weight)
+            {
+                return Weight.CompareTo(other.Weight);
+            }
+            if (MainColor != other.MainColor)
+            {
+                MainColor.Name.CompareTo(other.MainColor.Name);
+            }
+            return 0;
+        }
+
+        public bool Equals(Tractor other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (MaxSpeed != other.MaxSpeed)
+            {
+                return false;
+            }
+            if (Weight != other.Weight)
+            {
+                return false;
+            }
+            if (MainColor != other.MainColor)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is Tractor tractorObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(tractorObj);
+            }
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }
