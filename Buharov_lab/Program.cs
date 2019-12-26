@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Buharov_lab
 {
-    public delegate void carDelegate(ITransport vehicle);
+    public delegate void vehicleDelegate(ITransport vehicle);
     static class Program
     {
         /// <summary>
