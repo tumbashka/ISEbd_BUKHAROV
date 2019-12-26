@@ -70,7 +70,7 @@
             this.groupBox1.Size = new System.Drawing.Size(147, 123);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Тип кузова";
+            this.groupBox1.Text = "Тип техники";
             // 
             // labelBulldozer
             // 
@@ -243,7 +243,7 @@
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
-            // FormCarConfig
+            // FormVehicleConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -253,7 +253,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panelVehicle);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FormCarConfig";
+            this.Name = "FormVehicleConfig";
             this.Text = "FormCarConfig";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).EndInit();
             this.groupBox1.ResumeLayout(false);

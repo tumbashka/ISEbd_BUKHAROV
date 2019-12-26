@@ -49,15 +49,12 @@ namespace Buharov_lab
                 sw.Write("CountLevels:" + parkingStages.Count + Environment.NewLine);
                 foreach (var level in parkingStages)
                 {
-                    //Начинаем уровень
                     sw.Write("Level" + Environment.NewLine);
                     for (int i = 0; i < countPlaces; i++)
                     {
                         var vehicle = level[i];
                         if (vehicle != null)
                         {
-                            //если место не пустое
-                            //Записываем тип мшаины
                             if (vehicle.GetType().Name == "Tractor")
                             {
                                 sw.Write(i + ":Tractor:");
@@ -66,7 +63,6 @@ namespace Buharov_lab
                             {
                                 sw.Write(i + ":Bulldozer:");
                             }
-                            //Записываемые параметры
                             sw.Write(vehicle + Environment.NewLine);
                         }
                     }
@@ -105,7 +101,6 @@ namespace Buharov_lab
                     {
                         if (line == "Level")
                         {
-                            //начинаем новый уровень
                             counter++;
                             parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth, pictureHeight));
                             continue;
