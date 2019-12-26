@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Buharov_lab
 {
-    public partial class FormCarConfig : Form
+    public partial class FormVehicleConfig : Form
     {
 
         ITransport vehicle = null;
 
         private event carDelegate eventAddCar;
 
-        public FormCarConfig()
+        public FormVehicleConfig()
         {
             InitializeComponent();
             panelBlack.MouseDown += panelColor_MouseDown;

@@ -1,6 +1,6 @@
 ﻿namespace Buharov_lab
 {
-    partial class FormCarConfig
+    partial class FormVehicleConfig
     {
         /// <summary>
         /// Required designer variable.

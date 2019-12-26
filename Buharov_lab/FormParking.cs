@@ -16,7 +16,7 @@ namespace Buharov_lab
 
         private const int countLevel = 5;
 
-        FormCarConfig form;
+        FormVehicleConfig form;
 
         public FormParking()
         {
@@ -115,17 +115,17 @@ pictureBoxParking.Height);
             Draw();
         }
 
-        private void buttonSetCar_Click(object sender, EventArgs e)
+        private void buttonSetVehicle_Click(object sender, EventArgs e)
         {
-            form = new FormCarConfig();
-            form.AddEvent(AddCar);
+            form = new FormVehicleConfig();
+            form.AddEvent(AddVehicle);
             form.Show();
         }
-        private void AddCar(ITransport car)
+        private void AddVehicle(ITransport vehicle)
         {
-            if (car != null && listBoxLevels.SelectedIndex > -1)
+            if (vehicle != null && listBoxLevels.SelectedIndex > -1)
             {
-                int place = parking[listBoxLevels.SelectedIndex] + car;
+                int place = parking[listBoxLevels.SelectedIndex] + vehicle;
                 if (place > -1)
                 {
                     Draw();
