@@ -132,7 +132,7 @@ pictureBoxParking.Height);
                 }
                 else
                 {
-                    MessageBox.Show("Машину не удалось поставить");
+                    MessageBox.Show("Технику не удалось поставить");
                 }
             }
         }

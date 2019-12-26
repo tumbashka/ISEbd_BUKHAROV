@@ -36,11 +36,11 @@ namespace Buharov_lab
         {
             if (vehicle != null)
             {
-                Bitmap bmp = new Bitmap(pictureBoxTakeCar.Width, pictureBoxTakeCar.Height);
+                Bitmap bmp = new Bitmap(pictureBoxTakeVehicle.Width, pictureBoxTakeVehicle.Height);
                 Graphics gr = Graphics.FromImage(bmp);
-                vehicle.SetPosition(5, 5, pictureBoxTakeCar.Width, pictureBoxTakeCar.Height);
+                vehicle.SetPosition(5, 5, pictureBoxTakeVehicle.Width, pictureBoxTakeVehicle.Height);
                 vehicle.DrawVehicle(gr);
-                pictureBoxTakeCar.Image = bmp;
+                pictureBoxTakeVehicle.Image = bmp;
             }
         }
 

@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBoxTakeCar = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+
+            this.pictureBoxTakeVehicle = new System.Windows.Forms.PictureBox();
+            this.groupBoxType = new System.Windows.Forms.GroupBox();
             this.labelBulldozer = new System.Windows.Forms.Label();
             this.labelTractor = new System.Windows.Forms.Label();
             this.panelVehicle = new System.Windows.Forms.Panel();
             this.labelDopColor = new System.Windows.Forms.Label();
             this.labelBaseColor = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxColors = new System.Windows.Forms.GroupBox();
             this.panelOrange = new System.Windows.Forms.Panel();
             this.panelYellow = new System.Windows.Forms.Panel();
             this.panelFuchsia = new System.Windows.Forms.Panel();
@@ -44,33 +45,33 @@
             this.panelGreen = new System.Windows.Forms.Panel();
             this.panelWhite = new System.Windows.Forms.Panel();
             this.panelBlack = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeVehicle)).BeginInit();
+            this.groupBoxType.SuspendLayout();
             this.panelVehicle.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxColors.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBoxTakeCar
+            // pictureBoxTakeVehicle
             // 
-            this.pictureBoxTakeCar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxTakeCar.Location = new System.Drawing.Point(12, 14);
-            this.pictureBoxTakeCar.Name = "pictureBoxTakeCar";
-            this.pictureBoxTakeCar.Size = new System.Drawing.Size(139, 89);
-            this.pictureBoxTakeCar.TabIndex = 0;
-            this.pictureBoxTakeCar.TabStop = false;
+            this.pictureBoxTakeVehicle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxTakeVehicle.Location = new System.Drawing.Point(12, 14);
+            this.pictureBoxTakeVehicle.Name = "pictureBoxTakeVehicle";
+            this.pictureBoxTakeVehicle.Size = new System.Drawing.Size(139, 89);
+            this.pictureBoxTakeVehicle.TabIndex = 0;
+            this.pictureBoxTakeVehicle.TabStop = false;
             // 
-            // groupBox1
+            // groupBoxType
             // 
-            this.groupBox1.Controls.Add(this.labelBulldozer);
-            this.groupBox1.Controls.Add(this.labelTractor);
-            this.groupBox1.Location = new System.Drawing.Point(21, 26);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(147, 123);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Тип техники";
+            this.groupBoxType.Controls.Add(this.labelBulldozer);
+            this.groupBoxType.Controls.Add(this.labelTractor);
+            this.groupBoxType.Location = new System.Drawing.Point(21, 26);
+            this.groupBoxType.Name = "groupBoxType";
+            this.groupBoxType.Size = new System.Drawing.Size(147, 123);
+            this.groupBoxType.TabIndex = 1;
+            this.groupBoxType.TabStop = false;
+            this.groupBoxType.Text = "Тип техники";
             // 
             // labelBulldozer
             // 
@@ -100,7 +101,7 @@
             // 
             this.panelVehicle.AllowDrop = true;
             this.panelVehicle.Controls.Add(this.labelDopColor);
-            this.panelVehicle.Controls.Add(this.pictureBoxTakeCar);
+            this.panelVehicle.Controls.Add(this.pictureBoxTakeVehicle);
             this.panelVehicle.Controls.Add(this.labelBaseColor);
             this.panelVehicle.Location = new System.Drawing.Point(188, 26);
             this.panelVehicle.Name = "panelVehicle";
@@ -135,22 +136,22 @@
             this.labelBaseColor.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelBaseColor_DragDrop);
             this.labelBaseColor.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelBaseColor_DragEnter);
             // 
-            // groupBox2
+            // groupBoxColors
             // 
-            this.groupBox2.Controls.Add(this.panelOrange);
-            this.groupBox2.Controls.Add(this.panelYellow);
-            this.groupBox2.Controls.Add(this.panelFuchsia);
-            this.groupBox2.Controls.Add(this.panelRed);
-            this.groupBox2.Controls.Add(this.panelBlue);
-            this.groupBox2.Controls.Add(this.panelGreen);
-            this.groupBox2.Controls.Add(this.panelWhite);
-            this.groupBox2.Controls.Add(this.panelBlack);
-            this.groupBox2.Location = new System.Drawing.Point(358, 26);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(133, 192);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Цвета";
+            this.groupBoxColors.Controls.Add(this.panelOrange);
+            this.groupBoxColors.Controls.Add(this.panelYellow);
+            this.groupBoxColors.Controls.Add(this.panelFuchsia);
+            this.groupBoxColors.Controls.Add(this.panelRed);
+            this.groupBoxColors.Controls.Add(this.panelBlue);
+            this.groupBoxColors.Controls.Add(this.panelGreen);
+            this.groupBoxColors.Controls.Add(this.panelWhite);
+            this.groupBoxColors.Controls.Add(this.panelBlack);
+            this.groupBoxColors.Location = new System.Drawing.Point(358, 26);
+            this.groupBoxColors.Name = "groupBoxColors";
+            this.groupBoxColors.Size = new System.Drawing.Size(133, 192);
+            this.groupBoxColors.TabIndex = 2;
+            this.groupBoxColors.TabStop = false;
+            this.groupBoxColors.Text = "Цвета";
             // 
             // panelOrange
             // 
@@ -224,15 +225,15 @@
             this.panelBlack.Size = new System.Drawing.Size(38, 36);
             this.panelBlack.TabIndex = 0;
             // 
-            // button1
+            // buttonAdd
             // 
-            this.button1.Location = new System.Drawing.Point(27, 155);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonOk_Click);
+            this.buttonAdd.Location = new System.Drawing.Point(27, 155);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(87, 30);
+            this.buttonAdd.TabIndex = 3;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonOk_Click);
             // 
             // buttonCancel
             // 
@@ -249,30 +250,30 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 255);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.groupBoxColors);
             this.Controls.Add(this.panelVehicle);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "FormVehicleConfig";
-            this.Text = "FormCarConfig";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.Controls.Add(this.groupBoxType);
+            this.Name = "FormCarConfig";
+            this.Text = "FormVehicleConfig";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeVehicle)).EndInit();
+            this.groupBoxType.ResumeLayout(false);
             this.panelVehicle.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.groupBoxColors.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBoxTakeCar;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBoxTakeVehicle;
+        private System.Windows.Forms.GroupBox groupBoxType;
         private System.Windows.Forms.Label labelBulldozer;
         private System.Windows.Forms.Label labelTractor;
         private System.Windows.Forms.Panel panelVehicle;
         private System.Windows.Forms.Label labelDopColor;
         private System.Windows.Forms.Label labelBaseColor;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBoxColors;
         private System.Windows.Forms.Panel panelOrange;
         private System.Windows.Forms.Panel panelYellow;
         private System.Windows.Forms.Panel panelFuchsia;
@@ -281,7 +282,7 @@
         private System.Windows.Forms.Panel panelGreen;
         private System.Windows.Forms.Panel panelWhite;
         private System.Windows.Forms.Panel panelBlack;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonCancel;
     }
 }
