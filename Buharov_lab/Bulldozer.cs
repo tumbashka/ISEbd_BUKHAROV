@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Buharov_lab
 {
-    class Bulldozer : Tractor
+    class Bulldozer : Tractor, IComparable<Bulldozer>, IEquatable<Bulldozer>
     {
         private const int BulldozerWidth = 120;
 
@@ -81,6 +81,83 @@ namespace Buharov_lab
         public void SetDopColor(Color color)
         {
             DopColor = color;
+        }
+
+        public int CompareTo(Bulldozer other)
+        {
+            var res = (this is Tractor).CompareTo(other is Tractor);
+            if (res != 0)
+            {
+                return res;
+            }
+            if (DopColor != other.DopColor)
+            {
+                DopColor.Name.CompareTo(other.DopColor.Name);
+            }
+            if (BucketRaised != other.BucketRaised)
+            {
+                return BucketRaised.CompareTo(other.BucketRaised);
+            }
+            if (WindowOpen != other.WindowOpen)
+            {
+                return WindowOpen.CompareTo(other.WindowOpen);
+            }
+            if (CountWheels != other.CountWheels)
+            {
+                return CountWheels.CompareTo(other.CountWheels);
+            }
+            return 0;
+        }
+
+        public bool Equals(Bulldozer other)
+        {
+            var res = (this as Tractor).Equals(other as Tractor);
+            if (!res)
+            {
+                return res;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
+            if (BucketRaised != other.BucketRaised)
+            {
+                return false;
+            }
+            if (WindowOpen != other.WindowOpen)
+            {
+                return false;
+            }
+            if (CountWheels != other.CountWheels)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is Bulldozer tractorObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(tractorObj);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

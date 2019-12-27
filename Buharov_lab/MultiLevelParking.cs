@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Buharov_lab
 {
-    class MultiLevelParking
+    public class MultiLevelParking
     {
         List<Parking<ITransport>> parkingStages;
 
@@ -52,23 +52,17 @@ namespace Buharov_lab
                 foreach (var level in parkingStages)
                 {
                     sw.Write("Level" + Environment.NewLine);
-                    for (int i = 0; i < countPlaces; i++)
+                    foreach (ITransport vehicle in level)
                     {
-                        try
+                        if (vehicle.GetType().Name == "Tractor")
                         {
-                            var vehicle = level[i];
-                       
-                            if (vehicle.GetType().Name == "Tractor")
-                            {
-                                sw.Write(i + ":Tractor:");
-                            }
-                            if (vehicle.GetType().Name == "Bulldozer")
-                            {
-                                sw.Write(i + ":Bulldozer:");
-                            }
-                            sw.Write(vehicle + Environment.NewLine);
+                            sw.Write((level.GetKey) + ":Tractor:");
                         }
-                        catch { }
+                        if (vehicle.GetType().Name == "Bulldozer")
+                        {
+                            sw.Write((level.GetKey) + ":Bulldozer:");
+                        }
+                        sw.Write(vehicle + Environment.NewLine);
                     }
                 }
             }
@@ -123,6 +117,10 @@ namespace Buharov_lab
                     throw new Exception("Неверный формат файла");
                 }
             }
+        }
+        public void Sort()
+        {
+            parkingStages.Sort();
         }
     }
 }
