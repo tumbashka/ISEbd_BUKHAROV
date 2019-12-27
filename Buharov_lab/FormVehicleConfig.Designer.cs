@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.pictureBoxTakeVehicle = new System.Windows.Forms.PictureBox();
             this.groupBoxType = new System.Windows.Forms.GroupBox();
             this.labelBulldozer = new System.Windows.Forms.Label();
@@ -243,7 +244,7 @@
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
-            // FormCarConfig
+            // FormVehicleConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
