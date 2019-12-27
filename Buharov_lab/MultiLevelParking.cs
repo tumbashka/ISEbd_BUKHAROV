@@ -73,12 +73,6 @@ namespace Buharov_lab
             return true;
         }
 
-        private void WriteToFile(string text, StreamWriter stream)
-        {
-            byte[] info = new UTF8Encoding(true).GetBytes(text);
-            stream.Write(text);
-        }
-
         public bool LoadData(string filename)
         {
             if (!File.Exists(filename))
