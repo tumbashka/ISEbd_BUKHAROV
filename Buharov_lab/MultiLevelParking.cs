@@ -54,9 +54,10 @@ namespace Buharov_lab
                     sw.Write("Level" + Environment.NewLine);
                     for (int i = 0; i < countPlaces; i++)
                     {
-                        var vehicle = level[i];
-                        if (vehicle != null)
+                        try
                         {
+                            var vehicle = level[i];
+                       
                             if (vehicle.GetType().Name == "Tractor")
                             {
                                 sw.Write(i + ":Tractor:");
@@ -67,6 +68,7 @@ namespace Buharov_lab
                             }
                             sw.Write(vehicle + Environment.NewLine);
                         }
+                        catch { }
                     }
                 }
             }
@@ -116,7 +118,10 @@ namespace Buharov_lab
                     }
                     return true;
                 }
-                return false;
+                else
+                {
+                    throw new Exception("Неверный формат файла");
+                }
             }
         }
     }
