@@ -49,7 +49,8 @@ namespace Buharov_lab
             if (p._places.ContainsValue(car))
             {
                 throw new ParkingAlreadyHaveException();
-            }
+            }
+
             for (int i = 0; i < p._maxCount; i++)
             {
                 if (p.CheckFreePlace(i))
